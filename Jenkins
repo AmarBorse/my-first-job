@@ -2,14 +2,14 @@ pipeline {
   agent any
   environment {
       APP_NAME = 'demo'
-      }    
-      stage {
-          stage('Build'){
-            environment {
-                 BUILD_MODE =  'production'
-            }
+  }
+  stages {
+      stage('Build') {
+          environment {
+              BUILD_MODE = 'production'
+          }
           steps {
-            echo 'Testing...'
+             sh 'echo $APP_NAME $BUILD_MODE'
           }
       }
   }
