@@ -1,0 +1,13 @@
+piprline{
+  agent amy
+  parameter{ 
+    choice(name: 'ENVIRONMENT',Choices: ['Staging','production'],description:'Target')
+  }
+  stages{
+    stage('Deploy'){
+      steps{
+        sh"echo Deploying to ${params.ENVIRONMENT}"
+      }
+    }
+  }
+}
