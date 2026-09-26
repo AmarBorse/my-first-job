@@ -1,5 +1,5 @@
 pipeline{
-  agent amy
+  agent any
   parameter{ 
     choice(name: 'ENVIRONMENT',Choices: ['Staging','production'],description:'Target')
   }
@@ -7,7 +7,7 @@ pipeline{
     stage('Tests'){
       parallel{
         stage('Unit'){ steps { sh 'echo Unit tests'} }
-        staeg('Integration'){Steps { sh 'echo Integration teste'}}
+        stage('Integration'){Steps { sh 'echo Integration teste'}}
       }
     }
   }
