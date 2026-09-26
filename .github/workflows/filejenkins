@@ -1,4 +1,4 @@
-piprline{
+pipeline{
   agent amy
   parameter{ 
     choice(name: 'ENVIRONMENT',Choices: ['Staging','production'],description:'Target')
