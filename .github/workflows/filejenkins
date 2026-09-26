@@ -4,9 +4,10 @@ piprline{
     choice(name: 'ENVIRONMENT',Choices: ['Staging','production'],description:'Target')
   }
   stages{
-    stage('Deploy'){
-      steps{
-        sh"echo Deploying to ${params.ENVIRONMENT}"
+    stage('Tests'){
+      parallel{
+        stage('Unit'){ steps { sh 'echo Unit tests'} }
+        staeg('Integration'){Steps { sh 'echo Integration teste'}}
       }
     }
   }
